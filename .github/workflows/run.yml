@@ -8,5 +8,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install mineflayer
-      - run: node index.js
+      - name: Install Dependencies
+        run: npm install mineflayer
+      - name: Run Bot Continuously
+        run: |
+          node index.js &
+          sleep infinity
